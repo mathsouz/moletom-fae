@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Moletom NDIG</title>
+</head>
+<body>
+    <Header class="Cabecalho">
+        <div class="cabecalho-texto">
+            <img src="Imagens/Logo FAE.png" alt="" class="logo-fae">
+            <h1>Negócios Digitais</h1>
+        </div>
+        
+    </Header>
+    <main >
+        <Div class="moletom-frente">
+            <h2>Frente</h2>
+            <div class="m-frente">
+                <img src="Imagens/Adobe Express - file (1) 2.png" alt="" class="foto-frente">
+            </div>
+            
+            <p>Inspirado no design característico da FAE, o moletom traz a sigla do curso em destaque no centro, acompanhada da logo da instituição. Para um toque extra de identidade, o nome do curso está estampado na manga direita.</p>
+        </Div>
+       
+        <div class="moletom-costas">
+            <h2>Costas</h2>
+            <img src="Imagens/Adobe Express - file (1) - cópia 2.png" alt="" class="foto-costas">
+            <p>Para dar ainda mais personalidade ao moletom, adicionamos um detalhe especial no canto das costas, com a sigla do curso e a logo da FAE, garantindo um design equilibrado e marcante.</p>
+        </div>
+    </main>
+
+    
+    <section class="form-section">
+        <div class="form-texto">
+            <h2>Gostou?</h2>
+            <p>Garanta sua reserva agora!</p>
+        </div>
+
+        <div class="forms">
+            <form class="formulario" id="meuFormulario">
+                <input type="text" id="nome" name="nome" placeholder="Nome" required class="input">
+                <input type="email" id="email" name="email" placeholder="E-mail" required class="input">
+                <input type="text" id="whatsapp" name="whatsapp" placeholder="WhatsApp" required class="input">
+                <select id="periodo" name="periodo" required class="input">
+                    <option value="" disabled selected>Período</option>
+                    <option value="1º Período">1º Período</option>
+                    <option value="2º Período">2º Período</option>
+                    <option value="3º Período">3º Período</option>
+                    <option value="4º Período">4º Período</option>
+                    <option value="5º Período">5º Período</option>
+                    <option value="6º Período">6º Período</option>
+                    <option value="7º Período">7º Período</option>
+                    <option value="8º Período">8º Período</option>
+                </select>
+                <button type="submit" id="submitBtn">Enviar</button>
+            </form>
+        </div>
+        
+    </section>
+
+
+
+
+    <script>
+        document.getElementById('meuFormulario').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Altere a aparência do botão para indicar processamento
+            const submitBtn = document.getElementById('submitBtn');
+            const btnText = submitBtn.textContent;
+            submitBtn.disabled = true;
+            submitBtn.textContent = 'Enviando...';
+            
+            // Colete os dados do formulário
+            const formData = new FormData();
+            formData.append('nome', document.getElementById('nome').value);
+            formData.append('email', document.getElementById('email').value);
+            formData.append('whatsapp', document.getElementById('whatsapp').value);
+            formData.append('periodo', document.getElementById('periodo').value);
+            
+            // Envie os dados para o Google Script
+            fetch('https://script.google.com/macros/s/AKfycbyl4DH9LpYdrqT9jZq84SB8JlYuC2Cwxp3sZl0a0fHJlqjTUrury_ZBDv6q4k-BVJq0Jw/exec', {
+                method: 'POST',
+                body: formData
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.result === 'success') {
+                    alert('Reserva realizada com sucesso!');
+                    document.getElementById('meuFormulario').reset();
+                } else {
+                    alert('Erro ao enviar o formulário. Por favor, tente novamente.');
+                }
+            })
+            .catch(error => {
+                console.error('Erro:', error);
+                alert('Erro ao enviar o formulário. Por favor, tente novamente.');
+            })
+            .finally(() => {
+                // Restaura o botão
+                submitBtn.disabled = false;
+                submitBtn.textContent = btnText;
+            });
+        });
+    </script>
+</body>
+</html>

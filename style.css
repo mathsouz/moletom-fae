@@ -1,0 +1,282 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Orbitron:wght@400..900&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body {
+    background: rgb(0,0,0);
+    background: linear-gradient(180deg, rgba(0,0,0,1) 10%, rgba(255,223,8,1) 83%);
+    max-width: 768px;
+    color: #ffffff;
+}
+
+:root {
+    --cor1: color:#FFDF08
+    --titulos: font-family: "Orbitron", sans-serif;
+    --texto: font-family: "Montserrat", sans-serif;
+}
+
+/* Inicio cabeçalho*/
+header {
+    height: 160;
+    padding: 2rem;
+    
+
+}
+
+.cabecalho-texto{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+    font-family: "Orbitron", sans-serif;
+}
+
+h1{
+    color: #ffdf08
+}
+
+/* FIM CABEÇALHO*/          
+
+/* INÍCIO MAIN*/
+
+main{
+    padding: 2rem;
+    padding-top: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.moletom-frente{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    background: #ffffff;
+    border-radius: 10px;
+    padding: 1rem;
+    -webkit-box-shadow: 10px 10px 13px 0px rgba(0,0,0,0.59);
+    -moz-box-shadow: 10px 10px 13px 0px rgba(0,0,0,0.59);
+    box-shadow: 10px 10px 13px 0px rgba(0,0,0,0.59);
+    animation: scaleup 1s ease-out;
+}
+
+.moletom-frente:hover{
+    transform: scale(1) translateY(-10px); /* Aumenta e desloca para cima */
+}
+
+@keyframes scaleup {
+    from {
+        transform: scale(0.8);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+
+}
+
+
+
+
+
+
+
+
+
+
+.m-frente{
+    padding: -50px;
+    border-radius: 10px;
+}
+
+.m-frente img{
+   width: 230px;
+    height: auto;
+}
+
+.moletom-frente h2{
+    color: #353535;
+    text-align: center;
+    font-family: Orbitron;
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    margin-bottom: 1rem;
+}
+
+.moletom-frente p{
+    color: #353535;
+    font-family: "Montserrat", sans-serif;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.moletom-costas{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    background: #ffffff;
+    border-radius: 10px;
+    padding: 1rem;
+    -webkit-box-shadow: 10px 10px 13px 0px rgba(0,0,0,0.59);
+    -moz-box-shadow: 10px 10px 13px 0px rgba(0,0,0,0.59);
+    box-shadow: 10px 10px 13px 0px rgba(0,0,0,0.59);
+    animation: scaleup 1s ease-out;
+}
+
+.moletom-costas:hover{
+    transform: scale(1) translateY(-10px); /* Aumenta e desloca para cima */
+}
+
+
+
+
+
+
+.moletom-costas h2{
+    color: #353535;
+    text-align: center;
+    font-family: Orbitron;
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    margin-bottom: 1rem;
+}
+
+.moletom-costas img{
+    width: 230px;
+    height: auto;
+    
+}
+    
+    .moletom-costas p{
+    color: #353535;
+    font-family: "Montserrat", sans-serif;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+/* FIM MAIN*/
+
+/* INICIO FORMS*/
+
+.form-section{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 50px;
+    padding-top: 30px;
+    background-color: #000;
+    
+    
+}
+
+.form-texto{
+    text-align: center;
+}
+
+.form-texto h2{
+    color: #ffdf08;
+    text-align: center;
+    font-family: Orbitron;
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 700;
+}
+
+.form-texto p{
+    color: #ffffff;
+    font-family: "Montserrat", sans-serif;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+} 
+
+.formulario{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5rem;
+    padding: 2rem;
+}
+
+.input{
+    background: none;
+    border: 2px solid #ffdf08;
+    border-radius: 999px;
+    width: 100%;
+    padding: 10px;
+    color: #ffffff;
+    
+}
+
+input::placeholder{
+    color: #ffffff;
+}
+
+.formulario button{
+    background: none;
+    padding: 1rem 0.5rem 1rem 0.5rem;
+    width: 50%;
+    border-radius: 999px;
+    color: #ffffff;
+    border: 2px solid #ffdf08;
+    width: 80%;
+    transition: all 0.3s ease-in-out;
+}
+
+.formulario button:hover{
+    background-color: #ffde088d;
+}
+
+
+
+/*RESPONSIVIDADE*/
+
+@media screen and (min-width: 700px) {
+    body{
+        max-width: 100%;
+        height: 100%;
+    }
+
+    main{
+        display: flex;
+        flex-direction: row;
+        gap: 10px;
+
+    }
+
+    .form-section{
+        padding-top: 20px;
+    }
+
+    .formulario{
+        flex-direction: row;
+    }
+
+    .form-texto h2{
+        font-size: 64px;
+    }
+
+    
+}
